@@ -1,0 +1,285 @@
+<!--
+        QueryRequest message type based on the OASIS ebXML OASIS ebXML RegRep Version 4.0
+        Part 2: Services and Protocols (ebRS) OASIS Standard.
+        
+        Specification, schemas, samples etc. available from OASIS:
+        http://docs.oasis-open.org/regrep/regrep-core/v4.0/os/
+        
+        This sample is based on the version of the ebRS v4.0 standard, 
+        as well as ISA2 XML schemas for core vocabularies.     
+    -->
+
+<query:QueryRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink" id="c4369c4d-740e-4b64-80f0-7b209a66d629"
+    xmlns:toop="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0:toop"
+    xsi:schemaLocation="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0                        ../../xsd/regrep/query.xsd 
+    urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0                          ../../xsd/regrep/rim.xsd
+    urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0                           ../../xsd/regrep/rs.xsd 
+    http://www.w3.org/ns/corevocabulary/AggregateComponents              ../../xsd/cv/CoreVocabularyAggregateComponents-v1.00.xsd
+    urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2 ../../xsd/common/UBL-CommonBasicComponents-2.0.xsd
+    http://www.w3.org/ns/corevocabulary/po ../../xsd/cv/PublicOrganization-v1.00.xsd
+    http://data.europa.eu/m8g/CPSVAP2.0 ../../xsd/cv/cpsv-ap_xml_schema_v0.01.xsd">
+    
+    <!-- DOCUMENT UNIVERSAL UNIQUE IDENTIFIER -->
+    <!-- Already fulfilled by the QueryRequest ID -->
+    <rim:Slot name="DocumentUniversalUniqueIdentifier">
+        <rim:SlotValue xsi:type="rim:VocabularyTermValueType">
+            <rim:Value term="4edf26e5-d0de-4f90-a173-c9f8d4e3b9c3" vocabulary="**DEFINED BY DC**"/>
+        </rim:SlotValue>
+    </rim:Slot>
+    
+    <!-- ISSUE DATE / TIME  -->
+    <rim:Slot name="IssueDateTime">
+        <rim:SlotValue xsi:type="rim:DateTimeValueType">
+            <rim:Value>2020-02-14T19:20:30+01:00</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    
+    <!--   SPECIFICATION IDENTIFIER -->
+    <rim:Slot name="SpecificationIdentifier">
+        <rim:SlotValue xsi:type="rim:VocabularyTermValueType">
+            <rim:Value term="urn:eu:toop:ns:dataexchange-1p40::Request"
+                vocabulary="toop-doctypeid-qns"/>
+        </rim:SlotValue>
+    </rim:Slot>
+    
+    <!-- DATACONSUMER GLOBAL SESSION IDENTIFIER   -->
+    <!-- Should it be as a UUID type -->
+    <rim:Slot name="DataConsumerGlobalSessionIdentifier">
+        <rim:SlotValue xsi:type="rim:VocabularyTermValueType">
+            <rim:Value term="394956" vocabulary="**DEFINED_BY_DC**"/>
+        </rim:SlotValue>
+    </rim:Slot>
+    
+    <!--  DATACONSUMER REQUEST PURPOSE  -->
+    <rim:Slot name="DataConsumerRequestPurpose">
+        <rim:SlotValue xsi:type="rim:InternationalStringValueType">
+            <rim:Value>
+                <rim:LocalizedString
+                    value="This change request is rejected because it is too complex a change."
+                    xml:lang="en-US"/>
+            </rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    
+    <query:ResponseOption returnType="LeafClassWithRepositoryItem"/>
+    <query:Query queryDefinition="data_element_request">
+        <rim:Slot name="DataConsumer">
+            <!--           LEGAL ADDRESS expressed with slots instead of AgentHasAddress -->
+            <!-- <rim:Slot name="DCLegalAddress">
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <!-\-     Core Location Vocabuary (CLV) Expression of the DCLegalAddress   -\->
+                    <clv:Cvlocation xmlns:clv="http://www.w3.org/ns/corevocabulary/location"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+                        xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+                        xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+                        <cva:Cvaddress>
+                            <cvb:FullCvaddress>Prince Street 15</cvb:FullCvaddress>
+                            <cvb:LocatorDesignator>15</cvb:LocatorDesignator>
+                            <cvb:Thoroughfare>Prince Street</cvb:Thoroughfare>
+                            <cvb:PostName>Liverpool</cvb:PostName>
+                            <cvb:AdminunitFirstline>United Kingdom</cvb:AdminunitFirstline>
+                            <cvb:AdminunitSecondline>GB</cvb:AdminunitSecondline>
+                            <cvb:PostCode>15115</cvb:PostCode>
+                        </cva:Cvaddress>
+                    </clv:Cvlocation>
+                </rim:SlotValue>
+            </rim:Slot>-->
+            <rim:SlotValue xsi:type="rim:AnyValueType">
+                <cpsv:Agent xmlns:cpsv="http://data.europa.eu/m8g/CPSVAP2.0" 
+                    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+                    xmlns:ccts="urn:un:unece:uncefact:documentation:2">
+                    <!--  AgentID doesn't support attribute to represent the schemeID attribute -->
+                    <cpsv:AgentID>
+                        urn:eu:toop:ns:dataexchange-1p40::Request:DE999999
+                    </cpsv:AgentID>
+                    <cpsv:AgentName>
+                        Company Name
+                    </cpsv:AgentName>
+                    <cpsv:AgentType>
+                        AGENT TYPE
+                    </cpsv:AgentType>
+                    <cpsv:AgentHasAddress>
+                        <cpsv:AddressID></cpsv:AddressID>
+                        <cpsv:AddressFullAddress>Prince Street 15</cpsv:AddressFullAddress>
+                        <cpsv:AddressThoroughfare>Prince Street</cpsv:AddressThoroughfare>
+                        <cpsv:AddressLocatorDesignator>15</cpsv:AddressLocatorDesignator>
+                        <cpsv:AddressPostName>Liverpool</cpsv:AddressPostName>
+                        <cpsv:AddressAdminUnitL1>United Kingdom</cpsv:AddressAdminUnitL1>
+                        <cpsv:AddressAdminUnitL2>GB</cpsv:AddressAdminUnitL2>
+                        <cpsv:AddressPostCode>15115</cpsv:AddressPostCode>
+                    </cpsv:AgentHasAddress>
+                </cpsv:Agent>
+            </rim:SlotValue>
+            <!--     DCUniqueIdentifier and DCName expressed with SLOTS and not CPSV example     -->
+            <!--            <rim:Slot name="DCUniqueIdentifier">
+                <rim:SlotValue xsi:type="rim:VocabularyTermValueType">
+                    <rim:Value term="DE999999999" vocabulary="**DEFINED_BY_DC**"/>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-\-     Core Vocabuary (CPSV) Expression of the DCName      -\->
+            <rim:Slot name="DCName">
+                <rim:SlotValue xsi:type="rim:StringValueType">
+                    <rim:Value>Company Name</rim:Value>
+                </rim:SlotValue>
+            </rim:Slot>-->
+        </rim:Slot>
+        <rim:Slot name="DataRequestSubject">
+            <rim:Slot name="LegalPerson">
+                <rim:Slot name="LegalRepresentative">
+                    <rim:Slot name="LegalRepresentativeAddress">
+                        <rim:SlotValue xsi:type="rim:AnyValueType">
+                            <clv:Cvlocation xmlns:clv="http://www.w3.org/ns/corevocabulary/location"
+                                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+                                xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+                                xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+                                <cva:Cvaddress>
+                                    <cvb:FullCvaddress>Prince Street 15</cvb:FullCvaddress>
+                                    <cvb:LocatorDesignator>15</cvb:LocatorDesignator>
+                                    <cvb:Thoroughfare>Prince Street</cvb:Thoroughfare>
+                                    <cvb:PostName>Liverpool</cvb:PostName>
+                                    <cvb:AdminunitFirstline>United Kingdom</cvb:AdminunitFirstline>
+                                    <cvb:AdminunitSecondline>GB</cvb:AdminunitSecondline>
+                                    <cvb:PostCode>15115</cvb:PostCode>
+                                </cva:Cvaddress>
+                            </clv:Cvlocation>
+                        </rim:SlotValue>
+                    </rim:Slot>
+                    <rim:SlotValue xsi:type="rim:AnyValueType">
+                        <!--     Core Person Vocabulary (CPV) Expression of the LegalRepresentative -->
+                        <cpv:Cvperson xmlns:cpv="http://www.w3.org/ns/corevocabulary/person"
+                            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                            xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+                            xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+                            <!-- Level of Assurance invalid-->
+                            <cbc:FamilyName>Sabatini</cbc:FamilyName>
+                            <cvb:GivenName>Bianca</cvb:GivenName>
+                            <cvb:GenderCode>F</cvb:GenderCode>
+                            <cvb:BirthName>Bianca Sabatini</cvb:BirthName>
+                            <cvb:BirthDate>1998-01-01</cvb:BirthDate>
+                            <cva:Cvidentifier>
+                                <cvb:Identifier>1212</cvb:Identifier>
+                            </cva:Cvidentifier>
+                        </cpv:Cvperson>
+                    </rim:SlotValue>
+                </rim:Slot>
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <!--     Core Business Vocabuary (CBV) Expression of the Legal Person   -->
+                    <cbv:Cvbusiness xmlns:cbv="http://www.w3.org/ns/corevocabulary/business"
+                        xmlns:clv="http://www.w3.org/ns/corevocabulary/location"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+                        xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+                        xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+                        <cvb:LegalName>AnyCompanyName</cvb:LegalName>
+                        <cva:LegalIdentifierCvidentifier>
+                            <cvb:Identifier>DE/GB/02735442Z</cvb:Identifier>
+                            <cvb:IdentifierType>Example</cvb:IdentifierType>
+                        </cva:LegalIdentifierCvidentifier>
+                        <cva:IdentifierCvidentifier>
+                            <cvb:Identifier>DE730757727</cvb:Identifier>
+                            <cvb:IdentifierType>VAT</cvb:IdentifierType>
+                        </cva:IdentifierCvidentifier>
+                        <!--     Core Location Vocabuary (CLV) Expression of the LegalEntityRegisteredAddress  -->
+                        <cva:Cvaddress>
+                            <cvb:FullCvaddress>Prince Street 15</cvb:FullCvaddress>
+                            <cvb:LocatorDesignator>15</cvb:LocatorDesignator>
+                            <cvb:Thoroughfare>Prince Street</cvb:Thoroughfare>
+                            <cvb:PostName>Liverpool</cvb:PostName>
+                            <cvb:AdminunitFirstline>United Kingdom</cvb:AdminunitFirstline>
+                            <cvb:AdminunitSecondline>GB</cvb:AdminunitSecondline>
+                            <cvb:PostCode>15115</cvb:PostCode>
+                        </cva:Cvaddress>
+                    </cbv:Cvbusiness>
+                </rim:SlotValue>
+            </rim:Slot>
+            <rim:Slot name="NaturalPerson">
+                <rim:Slot name="NaturalPersonAddress">
+                    <rim:SlotValue xsi:type="rim:AnyValueType">
+                        <clv:Cvlocation xmlns:clv="http://www.w3.org/ns/corevocabulary/location"
+                            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                            xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+                            xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+                            <cva:Cvaddress>
+                                <cvb:FullCvaddress>Prince Street 15</cvb:FullCvaddress>
+                                <cvb:LocatorDesignator>15</cvb:LocatorDesignator>
+                                <cvb:Thoroughfare>Prince Street</cvb:Thoroughfare>
+                                <cvb:PostName>Liverpool</cvb:PostName>
+                                <cvb:AdminunitFirstline>United Kingdom</cvb:AdminunitFirstline>
+                                <cvb:AdminunitSecondline>GB</cvb:AdminunitSecondline>
+                                <cvb:PostCode>15115</cvb:PostCode>
+                            </cva:Cvaddress>
+                        </clv:Cvlocation>
+                    </rim:SlotValue>
+                </rim:Slot>
+                <rim:SlotValue xsi:type="rim:AnyValueType">
+                    <!--     Core Person Vocabulary (CPV) Expression of the LegalRepresentative -->
+                    <cpv:Cvperson xmlns:cpv="http://www.w3.org/ns/corevocabulary/person"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns:cva="http://www.w3.org/ns/corevocabulary/AggregateComponents"
+                        xmlns:cvb="http://www.w3.org/ns/corevocabulary/BasicComponents"
+                        xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+                        <!-- Level of Assurance invalid-->
+                        <cbc:FamilyName>Sabatini</cbc:FamilyName>
+                        <cvb:GivenName>Bianca</cvb:GivenName>
+                        <cvb:GenderCode>F</cvb:GenderCode>
+                        <cvb:BirthName>Bianca Sabatini</cvb:BirthName>
+                        <cvb:BirthDate>1998-01-01</cvb:BirthDate>
+                        <cva:Cvidentifier>
+                            <cvb:Identifier>1212</cvb:Identifier>
+                        </cva:Cvidentifier>
+                    </cpv:Cvperson>
+                </rim:SlotValue>
+            </rim:Slot>
+        </rim:Slot>
+        <rim:Slot name="DataRequestAuthorization">
+            <rim:SlotValue xsi:type="rim:StringValueType">
+                <rim:Value>TOKEN</rim:Value>
+            </rim:SlotValue>
+        </rim:Slot>
+        <rim:Slot name="EvidenceRequestList">
+            <rim:SlotValue xsi:type="rim:CollectionValueType"
+                collectionType="urn:oasis:names:tc:ebxml-regrep:CollectionType:Set">
+                <rim:Element xsi:type="rim:SlotValueType">
+                    <!-- Document Request with slots example  -->
+                        <rim:Slot name="EvidenceRequest">
+                            <rim:Slot name="DocumentIdentifier">
+                                <rim:SlotValue xsi:type="rim:VocabularyTermValueType">
+                                    <rim:Value term="4edf26e5-d0de-4f90-a173-c9f8d4e3b9c3" vocabulary="**DEFINED BY DC**"/>
+                                </rim:SlotValue>
+                            </rim:Slot>
+                            <rim:Slot name="DocumentRequestTypeCode">
+                                <rim:SlotValue xsi:type="rim:StringValueType">
+                                    <rim:Value>ETR</rim:Value>
+                                </rim:SlotValue>
+                            </rim:Slot>
+                            <rim:Slot name="DocumentRequestMimeTypeCode">
+                                <rim:SlotValue xsi:type="rim:StringValueType">
+                                    <rim:Value>application/pdf</rim:Value>
+                                </rim:SlotValue>
+                            </rim:Slot>
+                            <!--   Is DocumentURI routing info and needs to be moved into XHE? -->
+                            <rim:Slot name="DocumentRequestDocumentURI">
+                                <rim:SlotValue xsi:type="rim:StringValueType">
+                                    <rim:Value>DOCUMENT URI</rim:Value>
+                                </rim:SlotValue>
+                            </rim:Slot>
+                           
+                        </rim:Slot>    
+                </rim:Element>
+                <rim:Element xsi:type="rim:AnyValueType">
+                    <!--Core Criterion and Core Evidence Vocabulary (CCCEV) Expression goes here... xsds are missing at the moment  -->
+                </rim:Element>
+                <!--  ..... multiple elements  0...N cardinality -->
+            </rim:SlotValue>
+        </rim:Slot>
+        
+    </query:Query>
+</query:QueryRequest>

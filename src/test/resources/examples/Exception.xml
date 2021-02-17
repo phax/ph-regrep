@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rs:RegistryException xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0"
+    xsi:type="rs:AuthorizationExceptionType" 
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error" 
+    message="Data requested not found."
+    detail="An error occured while getting the requested data. These are the technical details."
+    code="DD-004">
+    
+    <rim:Slot name="PublicOrganizationIdentifier">
+        <rim:SlotValue xsi:type="rim:StringValueType">
+            <rim:Value>PUBLIC_ORGANIZATION</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="RequestID">
+        <rim:SlotValue xsi:type="rim:StringValueType">
+            <rim:Value>c4369c4d-740e-4b64-80f0-7b209a66d629</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="Origin">
+        <rim:SlotValue xsi:type="rim:StringValueType">
+            <rim:Value>ORIGIN</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="Category">
+        <rim:SlotValue xsi:type="rim:StringValueType">
+            <rim:Value>Category</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="ErrorText">
+        <rim:SlotValue xsi:type="rim:InternationalStringValueType">
+            <rim:Value>
+                <rim:LocalizedString value="This is a multilingual explanation for the error." xml:lang="en-US"/>
+            </rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="TimeStamp">
+        <rim:SlotValue xsi:type="rim:DateTimeValueType">
+            <rim:Value>2020-02-14T19:20:30+01:00</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+
+</rs:RegistryException>

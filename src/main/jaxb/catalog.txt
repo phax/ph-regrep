@@ -1,0 +1,3 @@
+PUBLIC "http://www.w3.org/XML/1998/namespace" "maven:com.helger.xsd:ph-xsds-xml:jar::!/schemas/xml.xsd"
+PUBLIC "http://www.w3.org/1999/xlink"         "maven:com.helger.xsd:ph-xsds-xlink:jar::!/schemas/xlink.xsd"
+PUBLIC "http://www.w3.org/2005/08/addressing" "maven:com.helger.xsd:ph-xsds-wsaddr:jar::!/schemas/ws-addr.xsd"
