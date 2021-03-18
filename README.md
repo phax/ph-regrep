@@ -8,6 +8,11 @@ It is licensed under Apache 2.0 license.
 
 It requires at least Java 8 to be used.
 
+# Functionality
+
+With the class `com.helger.regrep.RegRep4Reader` arbitrary RegRep documents can be read.
+With the class `com.helger.regrep.RegRep4Writer` arbitrary RegRep documents can be written.
+
 # Maven usage
 
 Add the following to your pom.xml to use this artifact, replacing `x.y.z` with the real version number:

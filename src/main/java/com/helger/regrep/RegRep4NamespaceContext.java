@@ -35,7 +35,7 @@ public class RegRep4NamespaceContext extends MapBasedNamespaceContext
 {
   private static final class SingletonHolder
   {
-    static final RegRep4NamespaceContext s_aInstance = new RegRep4NamespaceContext ();
+    static final RegRep4NamespaceContext INSTANCE = new RegRep4NamespaceContext ();
   }
 
   protected RegRep4NamespaceContext ()
@@ -53,6 +53,6 @@ public class RegRep4NamespaceContext extends MapBasedNamespaceContext
   @Nonnull
   public static RegRep4NamespaceContext getInstance ()
   {
-    return SingletonHolder.s_aInstance;
+    return SingletonHolder.INSTANCE;
   }
 }
