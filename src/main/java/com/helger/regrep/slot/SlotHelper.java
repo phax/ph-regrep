@@ -17,7 +17,7 @@
 package com.helger.regrep.slot;
 
 import java.math.BigInteger;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Locale;
 import java.util.Map;
 
@@ -70,7 +70,8 @@ public final class SlotHelper
   }
 
   @Nonnull
-  public static LocalizedStringType createLocalizedString (@Nonnull @Nonempty final String sLanguage, @Nonnull final String sText)
+  public static LocalizedStringType createLocalizedString (@Nonnull @Nonempty final String sLanguage,
+                                                           @Nonnull final String sText)
   {
     ValueEnforcer.notEmpty (sLanguage, "Language");
     ValueEnforcer.notNull (sText, "Text");
@@ -170,7 +171,8 @@ public final class SlotHelper
   }
 
   @Nonnull
-  public static CollectionValueType createSlotValue (@Nullable final ERegRepCollectionType eType, @Nullable final ValueType... x)
+  public static CollectionValueType createSlotValue (@Nullable final ERegRepCollectionType eType,
+                                                     @Nullable final ValueType... x)
   {
     ValueEnforcer.noNullValue (x, "Value");
     final CollectionValueType ret = new CollectionValueType ();
@@ -197,7 +199,7 @@ public final class SlotHelper
   }
 
   @Nonnull
-  public static DateTimeValueType createSlotValue (@Nonnull final LocalDateTime x)
+  public static DateTimeValueType createSlotValue (@Nonnull final OffsetDateTime x)
   {
     ValueEnforcer.notNull (x, "Value");
     return new DateTimeValueType (x);

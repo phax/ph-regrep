@@ -60,7 +60,7 @@ public final class SlotBuilderTest
   {
     final Document aDoc = DOMReader.readXMLDOM ("<root attr='a' xmlns='urn:anything-weird/bla-foo'><child><child2>value</child2></child></root>");
     final ICommonsMap <ValueType, ValueType> aMap = new CommonsLinkedHashMap <> ();
-    aMap.put (SlotHelper.createSlotValue ("Key1"), SlotHelper.createSlotValue (PDTFactory.getCurrentLocalDateTime ()));
+    aMap.put (SlotHelper.createSlotValue ("Key1"), SlotHelper.createSlotValue (PDTFactory.getCurrentOffsetDateTime ()));
     aMap.put (SlotHelper.createSlotValue (BigInteger.valueOf (1234)), SlotHelper.createSlotValue (42f));
 
     final QueryRequest aQR;
@@ -89,7 +89,8 @@ public final class SlotBuilderTest
                                                                                    SlotHelper.createSlotValue ("simpleString")))
                                                  .build (),
                                            _sb ().setValue ("text only").build (),
-                                           _sb ().setValue (SlotHelper.createVocabularyTerm ("myVoc", "myTerm")).build (),
+                                           _sb ().setValue (SlotHelper.createVocabularyTerm ("myVoc", "myTerm"))
+                                                 .build (),
                                            _sb ().setVocabularyTermValue ("myVoc2", "myTerm2").build ());
     assertNotNull (RegRep4Writer.queryRequest ().getAsDocument (aQR));
 

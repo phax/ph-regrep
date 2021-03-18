@@ -19,6 +19,7 @@ package com.helger.regrep.slot;
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
@@ -82,43 +83,52 @@ public class SlotBuilder
   }
 
   @Nonnull
-  public SlotBuilder setValue (@Nullable final ERegRepCollectionType eCollectionType, @Nullable final ValueType... aArray)
+  public SlotBuilder setValue (@Nullable final ERegRepCollectionType eCollectionType,
+                               @Nullable final ValueType... aArray)
   {
     return setValue (SlotHelper.createSlotValue (eCollectionType, aArray));
   }
 
   @Nonnull
-  public SlotBuilder setValue (@Nullable final ERegRepCollectionType eCollectionType, @Nullable final Iterable <? extends ValueType> aCont)
+  public SlotBuilder setValue (@Nullable final ERegRepCollectionType eCollectionType,
+                               @Nullable final Iterable <? extends ValueType> aCont)
   {
     return setValue (SlotHelper.createSlotValue (eCollectionType, aCont));
   }
 
   @Nonnull
-  public SlotBuilder setValue (@Nonnull final LocalDateTime x)
+  public SlotBuilder setValue (@Nonnull final OffsetDateTime x)
   {
     ValueEnforcer.notNull (x, "Value");
     return setValue (SlotHelper.createSlotValue (x));
   }
 
   @Nonnull
+  public SlotBuilder setValue (@Nonnull final LocalDateTime x)
+  {
+    ValueEnforcer.notNull (x, "Value");
+    return setValue (PDTFactory.createOffsetDateTime (x));
+  }
+
+  @Nonnull
   public SlotBuilder setValue (@Nonnull final LocalDate x)
   {
     ValueEnforcer.notNull (x, "Value");
-    return setValue (x.atStartOfDay ());
+    return setValue (PDTFactory.createOffsetDateTime (x));
   }
 
   @Nonnull
   public SlotBuilder setValue (@Nonnull final ZonedDateTime x)
   {
     ValueEnforcer.notNull (x, "Value");
-    return setValue (x.toLocalDateTime ());
+    return setValue (PDTFactory.createOffsetDateTime (x));
   }
 
   @Nonnull
   public SlotBuilder setValue (@Nonnull final Date x)
   {
     ValueEnforcer.notNull (x, "Value");
-    return setValue (PDTFactory.createLocalDateTime (x));
+    return setValue (PDTFactory.createOffsetDateTime (x));
   }
 
   @Nonnull
