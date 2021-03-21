@@ -15,7 +15,7 @@ With the class `com.helger.regrep.RegRep4Writer` arbitrary RegRep documents can 
 
 # Maven usage
 
-Add the following to your pom.xml to use this artifact, replacing `x.y.z` with the real version number:
+Add the following to your pom.xml to use this artifact, replacing `x.y.z` with the effective version number:
 
 ```xml
 <dependency>
@@ -31,7 +31,7 @@ Add the following to your pom.xml to use this artifact, replacing `x.y.z` with t
 
 # News and noteworthy
 
-* v1.0.2 - work in progress
+* v1.1.0 - 2021-03-21
     * Updated to ph-commons 10
 * v1.0.1 - 2021-03-18
     * Updated to ph-commons 9.5.5
