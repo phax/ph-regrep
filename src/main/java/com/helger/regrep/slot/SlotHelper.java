@@ -29,6 +29,7 @@ import org.w3c.dom.Element;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.datetime.XMLOffsetDateTime;
 import com.helger.commons.text.IMultilingualText;
 import com.helger.regrep.helper.VocabularyTerm;
 import com.helger.regrep.rim.AnyValueType;
@@ -200,6 +201,13 @@ public final class SlotHelper
 
   @Nonnull
   public static DateTimeValueType createSlotValue (@Nonnull final OffsetDateTime x)
+  {
+    ValueEnforcer.notNull (x, "Value");
+    return new DateTimeValueType (XMLOffsetDateTime.of (x));
+  }
+
+  @Nonnull
+  public static DateTimeValueType createSlotValue (@Nonnull final XMLOffsetDateTime x)
   {
     ValueEnforcer.notNull (x, "Value");
     return new DateTimeValueType (x);
