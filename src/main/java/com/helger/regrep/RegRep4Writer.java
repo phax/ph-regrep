@@ -19,15 +19,13 @@ package com.helger.regrep;
 import java.util.function.Consumer;
 
 import javax.annotation.Nonnull;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.collection.impl.CommonsArrayList;
 import com.helger.commons.collection.impl.ICommonsList;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.state.ESuccess;
+import com.helger.jaxb.IJAXBMarshaller;
 import com.helger.jaxb.builder.IJAXBDocumentType;
 import com.helger.jaxb.builder.JAXBDocumentType;
 import com.helger.jaxb.builder.JAXBWriterBuilder;
@@ -43,6 +41,10 @@ import com.helger.regrep.spi.FilterObjectsRequest;
 import com.helger.regrep.spi.FilterObjectsResponse;
 import com.helger.regrep.spi.ValidateObjectsRequest;
 import com.helger.regrep.spi.ValidateObjectsResponse;
+
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
 
 /**
  * A class to write RegRep request and response documents in a structured way.
@@ -75,7 +77,8 @@ public class RegRep4Writer <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, RegRe
   // Hack to disable package name check for QueryException
   @Override
   @Nonnull
-  public ESuccess write (@Nonnull final JAXBTYPE aJAXBDocument, @Nonnull final IJAXBMarshaller <JAXBTYPE> aMarshallerFunc)
+  public ESuccess write (@Nonnull final JAXBTYPE aJAXBDocument,
+                         @Nonnull final IJAXBMarshaller <JAXBTYPE> aMarshallerFunc)
   {
     ValueEnforcer.notNull (aJAXBDocument, "JAXBDocument");
     ValueEnforcer.notNull (aMarshallerFunc, "MarshallerFunc");
