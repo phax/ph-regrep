@@ -28,6 +28,8 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import com.helger.commons.datetime.PDTFactory;
+import com.helger.regrep.jaxb.RegRep4QueryRequestMarshaller;
+import com.helger.regrep.jaxb.RegRep4QueryResponseMarshaller;
 import com.helger.regrep.query.QueryRequest;
 import com.helger.regrep.query.QueryResponse;
 import com.helger.regrep.slot.SlotBuilder;
@@ -47,10 +49,11 @@ public final class RegRepHelperTest
   {
     assertNotNull (aQR);
 
+    final RegRep4QueryRequestMarshaller m = new RegRep4QueryRequestMarshaller ();
     if (false)
-      LOGGER.info (RegRep4Writer.queryRequest ().setFormattedOutput (true).getAsString (aQR));
+      LOGGER.info (m.setFormattedOutput (true).getAsString (aQR));
 
-    assertNotNull (RegRep4Writer.queryRequest ().getAsDocument (aQR));
+    assertNotNull (m.getAsDocument (aQR));
   }
 
   @Test
@@ -78,10 +81,11 @@ public final class RegRepHelperTest
   {
     assertNotNull (aQR);
 
+    final RegRep4QueryResponseMarshaller m = new RegRep4QueryResponseMarshaller ();
     if (true)
-      LOGGER.info (RegRep4Writer.queryResponse ().setFormattedOutput (true).getAsString (aQR));
+      LOGGER.info (m.setFormattedOutput (true).getAsString (aQR));
 
-    assertNotNull (RegRep4Writer.queryResponse ().getAsDocument (aQR));
+    assertNotNull (m.getAsDocument (aQR));
   }
 
   @Test

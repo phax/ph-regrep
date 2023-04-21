@@ -24,6 +24,9 @@ import java.io.File;
 
 import org.junit.Test;
 
+import com.helger.regrep.jaxb.RegRep4QueryRequestMarshaller;
+import com.helger.regrep.jaxb.RegRep4QueryResponseMarshaller;
+import com.helger.regrep.jaxb.RegRep4RegistryExceptionMarshaller;
 import com.helger.regrep.query.QueryRequest;
 import com.helger.regrep.query.QueryResponse;
 import com.helger.regrep.rs.AuthorizationExceptionType;
@@ -39,38 +42,38 @@ public final class RegRep4ReaderTest
   @Test
   public void testQueryRequest ()
   {
-    QueryRequest qr = RegRep4Reader.queryRequest ()
-                                   .read (new File ("src/test/resources/external/examples/Data Request.xml"));
+    final RegRep4QueryRequestMarshaller m = new RegRep4QueryRequestMarshaller ();
+    QueryRequest qr = m.read (new File ("src/test/resources/external/examples/Data Request.xml"));
     assertNotNull (qr);
 
-    assertNotNull (RegRep4Writer.queryRequest ().getAsBytes (qr));
+    assertNotNull (m.getAsBytes (qr));
 
-    qr = RegRep4Reader.queryRequest ().read (new File ("src/test/resources/external/examples/Document Request.xml"));
+    qr = m.read (new File ("src/test/resources/external/examples/Document Request.xml"));
     assertNotNull (qr);
 
-    assertNotNull (RegRep4Writer.queryRequest ().getAsBytes (qr));
+    assertNotNull (m.getAsBytes (qr));
   }
 
   @Test
   public void testQueryResponse ()
   {
-    final QueryResponse qr = RegRep4Reader.queryResponse ()
-                                          .read (new File ("src/test/resources/external/examples/Data Response.xml"));
+    final RegRep4QueryResponseMarshaller m = new RegRep4QueryResponseMarshaller ();
+    final QueryResponse qr = m.read (new File ("src/test/resources/external/examples/Data Response.xml"));
     assertNotNull (qr);
 
-    assertNotNull (RegRep4Writer.queryResponse ().getAsBytes (qr));
+    assertNotNull (m.getAsBytes (qr));
   }
 
   @Test
   public void testRegistryException ()
   {
-    final RegistryExceptionType re = RegRep4Reader.registryException ()
-                                                  .read (new File ("src/test/resources/external/examples/Exception.xml"));
+    final RegRep4RegistryExceptionMarshaller m = new RegRep4RegistryExceptionMarshaller ();
+    final RegistryExceptionType re = m.read (new File ("src/test/resources/external/examples/Exception.xml"));
     assertNotNull (re);
     assertTrue (re instanceof AuthorizationExceptionType);
 
     assertEquals ("DD-004", re.getCode ());
 
-    assertNotNull (RegRep4Writer.registryException ().getAsBytes (re));
+    assertNotNull (m.getAsBytes (re));
   }
 }
