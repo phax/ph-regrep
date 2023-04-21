@@ -54,6 +54,7 @@ import jakarta.xml.bind.Marshaller;
  * @param <JAXBTYPE>
  *        The implementation type.
  */
+@Deprecated (forRemoval = true, since = "3.0.0")
 public class RegRep4Writer <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, RegRep4Writer <JAXBTYPE>>
 {
   /**

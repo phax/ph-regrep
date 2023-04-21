@@ -39,12 +39,13 @@ public final class RegRep4ReaderTest
   @Test
   public void testQueryRequest ()
   {
-    QueryRequest qr = RegRep4Reader.queryRequest ().read (new File ("src/test/resources/examples/Data Request.xml"));
+    QueryRequest qr = RegRep4Reader.queryRequest ()
+                                   .read (new File ("src/test/resources/external/examples/Data Request.xml"));
     assertNotNull (qr);
 
     assertNotNull (RegRep4Writer.queryRequest ().getAsBytes (qr));
 
-    qr = RegRep4Reader.queryRequest ().read (new File ("src/test/resources/examples/Document Request.xml"));
+    qr = RegRep4Reader.queryRequest ().read (new File ("src/test/resources/external/examples/Document Request.xml"));
     assertNotNull (qr);
 
     assertNotNull (RegRep4Writer.queryRequest ().getAsBytes (qr));
@@ -53,7 +54,8 @@ public final class RegRep4ReaderTest
   @Test
   public void testQueryResponse ()
   {
-    final QueryResponse qr = RegRep4Reader.queryResponse ().read (new File ("src/test/resources/examples/Data Response.xml"));
+    final QueryResponse qr = RegRep4Reader.queryResponse ()
+                                          .read (new File ("src/test/resources/external/examples/Data Response.xml"));
     assertNotNull (qr);
 
     assertNotNull (RegRep4Writer.queryResponse ().getAsBytes (qr));
@@ -62,7 +64,8 @@ public final class RegRep4ReaderTest
   @Test
   public void testRegistryException ()
   {
-    final RegistryExceptionType re = RegRep4Reader.registryException ().read (new File ("src/test/resources/examples/Exception.xml"));
+    final RegistryExceptionType re = RegRep4Reader.registryException ()
+                                                  .read (new File ("src/test/resources/external/examples/Exception.xml"));
     assertNotNull (re);
     assertTrue (re instanceof AuthorizationExceptionType);
 

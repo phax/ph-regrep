@@ -62,39 +62,41 @@ public final class CRegRep4
     return CRegRep4.class.getClassLoader ();
   }
 
+  private static final String PREFIX = "external/schemas/regrep4/";
+
   // Note: requires rim, rs
   @Nonnull
   public static ClassPathResource getXSDResourceLCM ()
   {
-    return new ClassPathResource ("/schemas/regrep4/lcm.xsd", _getCL ());
+    return new ClassPathResource (PREFIX + "lcm.xsd", _getCL ());
   }
 
   // Note: requires rim, rs
   @Nonnull
   public static ClassPathResource getXSDResourceQuery ()
   {
-    return new ClassPathResource ("/schemas/regrep4/query.xsd", _getCL ());
+    return new ClassPathResource (PREFIX + "query.xsd", _getCL ());
   }
 
   // Note: requires xlink, ws-addr
   @Nonnull
   public static ClassPathResource getXSDResourceRIM ()
   {
-    return new ClassPathResource ("/schemas/regrep4/rim.xsd", _getCL ());
+    return new ClassPathResource (PREFIX + "rim.xsd", _getCL ());
   }
 
   // Note: requires rim
   @Nonnull
   public static ClassPathResource getXSDResourceRS ()
   {
-    return new ClassPathResource ("/schemas/regrep4/rs.xsd", _getCL ());
+    return new ClassPathResource (PREFIX + "rs.xsd", _getCL ());
   }
 
   // Note: requires rim, rs
   @Nonnull
   public static ClassPathResource getXSDResourceSPI ()
   {
-    return new ClassPathResource ("/schemas/regrep4/spi.xsd", _getCL ());
+    return new ClassPathResource (PREFIX + "spi.xsd", _getCL ());
   }
 
   @Nonnull
@@ -136,7 +138,7 @@ public final class CRegRep4
   }
 
   @PresentForCodeCoverage
-  private static final CRegRep4 s_aInstance = new CRegRep4 ();
+  private static final CRegRep4 INSTANCE = new CRegRep4 ();
 
   private CRegRep4 ()
   {}

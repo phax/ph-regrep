@@ -28,6 +28,7 @@ import com.helger.commons.io.resource.ClassPathResource;
  *
  * @author Philip Helger
  */
+@Deprecated (forRemoval = true, since = "3.0.0")
 public class ERegRep4XMLDocumentTypeTest
 {
   @Test

@@ -32,6 +32,7 @@ import com.helger.jaxb.builder.JAXBDocumentType;
  *
  * @author Philip Helger
  */
+@Deprecated (forRemoval = true, since = "3.0.0")
 public enum ERegRep4XMLDocumentType implements IJAXBDocumentType
 {
   REGISTRY_EXCEPTION (com.helger.regrep.rs.RegistryExceptionType.class, CRegRep4.getAllXSDsQuery ()),

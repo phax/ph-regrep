@@ -28,27 +28,27 @@
     <xjc:javaType name="com.helger.commons.datetime.XMLOffsetDate"     xmlType="xsd:date"     adapter="com.helger.jaxb.adapter.AdapterXMLOffsetDate" />
     <xjc:javaType name="com.helger.commons.datetime.XMLOffsetTime"     xmlType="xsd:time"     adapter="com.helger.jaxb.adapter.AdapterXMLOffsetTime" />
   </globalBindings>
-  <bindings schemaLocation="../resources/schemas/regrep4/lcm.xsd">
+  <bindings schemaLocation="../resources/external/schemas/regrep4/lcm.xsd">
     <schemaBindings>
       <package name="com.helger.regrep.lcm" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/regrep4/query.xsd">
+  <bindings schemaLocation="../resources/external/schemas/regrep4/query.xsd">
     <schemaBindings>
       <package name="com.helger.regrep.query" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/regrep4/rim.xsd">
+  <bindings schemaLocation="../resources/external/schemas/regrep4/rim.xsd">
     <schemaBindings>
       <package name="com.helger.regrep.rim" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/regrep4/rs.xsd">
+  <bindings schemaLocation="../resources/external/schemas/regrep4/rs.xsd">
     <schemaBindings>
       <package name="com.helger.regrep.rs" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/regrep4/spi.xsd">
+  <bindings schemaLocation="../resources/external/schemas/regrep4/spi.xsd">
     <schemaBindings>
       <package name="com.helger.regrep.spi" />
     </schemaBindings>

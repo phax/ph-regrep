@@ -45,6 +45,7 @@ import com.helger.regrep.spi.ValidateObjectsResponse;
  * @param <JAXBTYPE>
  *        The implementation type.
  */
+@Deprecated (forRemoval = true, since = "3.0.0")
 public class RegRep4Reader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, RegRep4Reader <JAXBTYPE>>
 {
   /**
