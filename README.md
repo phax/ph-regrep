@@ -31,8 +31,8 @@ Add the following to your pom.xml to use this artifact, replacing `x.y.z` with t
 
 # News and noteworthy
 
-* v3.0.0 - 2023-04-21
-    * Moved XSDs into folder `external/`
+* v3.0.0 - 2023-04-22
+    * Moved XSDs into folder `external/...`
     * Deprecated classes `ERegRep4XMLDocumentType`, `RegRep4Reader` and `RegRep4Writer`
     * Added new package `com.helger.regrep.jaxb` with all the specific marshallers
 * v2.0.0 - 2023-01-08
