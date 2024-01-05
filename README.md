@@ -35,6 +35,8 @@ Add the following to your pom.xml to use this artifact, replacing `x.y.z` with t
 
 # News and noteworthy
 
+* v3.0.1 - work in progress
+    * Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin` 
 * v3.0.0 - 2023-04-22
     * Moved XSDs into folder `external/...`
     * Deprecated classes `ERegRep4XMLDocumentType`, `RegRep4Reader` and `RegRep4Writer`
