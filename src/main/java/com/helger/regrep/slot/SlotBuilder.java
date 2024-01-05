@@ -31,6 +31,7 @@ import org.w3c.dom.Element;
 
 import com.helger.commons.ValueEnforcer;
 import com.helger.commons.annotation.Nonempty;
+import com.helger.commons.builder.IBuilder;
 import com.helger.commons.datetime.PDTFactory;
 import com.helger.regrep.helper.VocabularyTerm;
 import com.helger.regrep.rim.InternationalStringType;
@@ -45,7 +46,7 @@ import com.helger.regrep.rim.VocabularyTermType;
  * @author Philip Helger
  */
 @NotThreadSafe
-public class SlotBuilder
+public class SlotBuilder implements IBuilder <SlotType>
 {
   private String m_sName;
   private ValueType m_aValue;
