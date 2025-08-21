@@ -18,17 +18,17 @@ package com.helger.regrep;
 
 import java.util.UUID;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
-
-import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.Nonempty;
+import com.helger.annotation.Nonempty;
+import com.helger.annotation.concurrent.Immutable;
+import com.helger.base.enforce.ValueEnforcer;
 import com.helger.regrep.query.QueryRequest;
 import com.helger.regrep.query.QueryResponse;
 import com.helger.regrep.query.ResponseOptionType;
 import com.helger.regrep.rim.QueryType;
 import com.helger.regrep.rim.SlotType;
+
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 /**
  * Helper class to simplify the creation of RegRep data constructs.

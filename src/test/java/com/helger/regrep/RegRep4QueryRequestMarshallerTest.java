@@ -33,11 +33,11 @@ import com.helger.regrep.rs.AuthorizationExceptionType;
 import com.helger.regrep.rs.RegistryExceptionType;
 
 /**
- * Test class for class {@link RegRep4Reader}.
+ * Test class for class {@link RegRep4QueryRequestMarshaller}.
  *
  * @author Philip Helger
  */
-public final class RegRep4ReaderTest
+public final class RegRep4QueryRequestMarshallerTest
 {
   @Test
   public void testQueryRequest ()

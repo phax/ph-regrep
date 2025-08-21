@@ -23,22 +23,22 @@ import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.NotThreadSafe;
-
 import org.w3c.dom.Element;
 
-import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.Nonempty;
-import com.helger.commons.builder.IBuilder;
-import com.helger.commons.datetime.PDTFactory;
+import com.helger.annotation.Nonempty;
+import com.helger.annotation.concurrent.NotThreadSafe;
+import com.helger.base.builder.IBuilder;
+import com.helger.base.enforce.ValueEnforcer;
+import com.helger.datetime.helper.PDTFactory;
 import com.helger.regrep.helper.VocabularyTerm;
 import com.helger.regrep.rim.InternationalStringType;
 import com.helger.regrep.rim.MapType;
 import com.helger.regrep.rim.SlotType;
 import com.helger.regrep.rim.ValueType;
 import com.helger.regrep.rim.VocabularyTermType;
+
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 /**
  * A type -safe builder for RegRep slots.

@@ -16,11 +16,11 @@
  */
 package com.helger.regrep.slot;
 
-import javax.annotation.Nonnull;
-
-import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.name.IHasName;
+import com.helger.annotation.style.ReturnsMutableCopy;
+import com.helger.base.name.IHasName;
 import com.helger.regrep.rim.SlotType;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * Generic slot provider.

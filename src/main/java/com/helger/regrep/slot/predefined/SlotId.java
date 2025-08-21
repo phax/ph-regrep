@@ -16,13 +16,13 @@
  */
 package com.helger.regrep.slot.predefined;
 
-import javax.annotation.Nonnull;
-
-import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.Nonempty;
+import com.helger.annotation.Nonempty;
+import com.helger.base.enforce.ValueEnforcer;
 import com.helger.regrep.rim.SlotType;
 import com.helger.regrep.slot.ISlotProvider;
 import com.helger.regrep.slot.SlotBuilder;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * Predefined RegRep slot "id"

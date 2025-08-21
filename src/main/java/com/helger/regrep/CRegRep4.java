@@ -16,19 +16,19 @@
  */
 package com.helger.regrep;
 
-import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-
-import com.helger.commons.annotation.PresentForCodeCoverage;
-import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.impl.CommonsArrayList;
-import com.helger.commons.collection.impl.ICommonsList;
-import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.commons.mime.EMimeContentType;
-import com.helger.commons.mime.IMimeType;
+import com.helger.annotation.concurrent.Immutable;
+import com.helger.annotation.style.PresentForCodeCoverage;
+import com.helger.annotation.style.ReturnsMutableCopy;
+import com.helger.collection.commons.CommonsArrayList;
+import com.helger.collection.commons.ICommonsList;
+import com.helger.io.resource.ClassPathResource;
+import com.helger.mime.EMimeContentType;
+import com.helger.mime.IMimeType;
 import com.helger.xsds.wsaddr.CWSAddr;
 import com.helger.xsds.xlink.CXLink;
 import com.helger.xsds.xml.CXML_XSD;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * Contains all the constants for RegRep XSD handling.

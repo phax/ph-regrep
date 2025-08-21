@@ -35,25 +35,34 @@ Add the following to your pom.xml to use this artifact, replacing `x.y.z` with t
 
 # News and noteworthy
 
-* v3.0.1 - work in progress
-    * Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin` 
-* v3.0.0 - 2023-04-22
-    * Moved XSDs into folder `external/...`
-    * Deprecated classes `ERegRep4XMLDocumentType`, `RegRep4Reader` and `RegRep4Writer`
-    * Added new package `com.helger.regrep.jaxb` with all the specific marshallers
-* v2.0.0 - 2023-01-08
-    * Using Java 11 as the baseline
-    * Updated to ph-commons 11
-    * Using JAXB 4.0 as the baseline
-* v1.2.0 - 2021-05-02
-    * Updated to ph-commons 10.1
-* v1.1.0 - 2021-03-21
-    * Updated to ph-commons 10
-* v1.0.1 - 2021-03-18
-    * Updated to ph-commons 9.5.5
-    * Changed the JAXB binding for `xs:dateTime` to `java.time.OffsetDateTime`
-* v1.0.0 - 2021-02-17
-    * Initial version
+v4.0.0 - work in progress
+* Requires Java 17 as the minimum version
+* Updated to ph-commons 12.0.0
+* Removed all deprecated methods marked for removal
+* Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin` 
+
+v3.0.0 - 2023-04-22
+* Moved XSDs into folder `external/...`
+* Deprecated classes `ERegRep4XMLDocumentType`, `RegRep4Reader` and `RegRep4Writer`
+* Added new package `com.helger.regrep.jaxb` with all the specific marshallers
+
+v2.0.0 - 2023-01-08
+* Using Java 11 as the baseline
+* Updated to ph-commons 11
+* Using JAXB 4.0 as the baseline
+
+v1.2.0 - 2021-05-02
+* Updated to ph-commons 10.1
+
+v1.1.0 - 2021-03-21
+* Updated to ph-commons 10
+
+v1.0.1 - 2021-03-18
+* Updated to ph-commons 9.5.5
+* Changed the JAXB binding for `xs:dateTime` to `java.time.OffsetDateTime`
+
+v1.0.0 - 2021-02-17
+* Initial version
 
 ---
 

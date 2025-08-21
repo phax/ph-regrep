@@ -22,22 +22,22 @@ import java.math.BigInteger;
 import java.util.Date;
 import java.util.Locale;
 
-import javax.annotation.Nonnull;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
-import com.helger.commons.collection.impl.CommonsLinkedHashMap;
-import com.helger.commons.collection.impl.ICommonsMap;
-import com.helger.commons.datetime.PDTFactory;
-import com.helger.commons.mutable.MutableInt;
+import com.helger.base.numeric.mutable.MutableInt;
+import com.helger.collection.commons.CommonsLinkedHashMap;
+import com.helger.collection.commons.ICommonsMap;
+import com.helger.datetime.helper.PDTFactory;
 import com.helger.regrep.RegRepHelper;
 import com.helger.regrep.jaxb.RegRep4QueryRequestMarshaller;
 import com.helger.regrep.query.QueryRequest;
 import com.helger.regrep.rim.ValueType;
 import com.helger.xml.serialize.read.DOMReader;
+
+import jakarta.annotation.Nonnull;
 
 /**
  * Test class for class {@link SlotBuilder}

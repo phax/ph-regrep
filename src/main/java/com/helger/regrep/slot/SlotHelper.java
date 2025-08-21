@@ -21,16 +21,12 @@ import java.time.OffsetDateTime;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
-
 import org.w3c.dom.Element;
 
-import com.helger.commons.ValueEnforcer;
-import com.helger.commons.annotation.Nonempty;
-import com.helger.commons.datetime.XMLOffsetDateTime;
-import com.helger.commons.text.IMultilingualText;
+import com.helger.annotation.Nonempty;
+import com.helger.annotation.concurrent.Immutable;
+import com.helger.base.enforce.ValueEnforcer;
+import com.helger.datetime.xml.XMLOffsetDateTime;
 import com.helger.regrep.helper.VocabularyTerm;
 import com.helger.regrep.rim.AnyValueType;
 import com.helger.regrep.rim.BooleanValueType;
@@ -50,6 +46,10 @@ import com.helger.regrep.rim.StringValueType;
 import com.helger.regrep.rim.ValueType;
 import com.helger.regrep.rim.VocabularyTermType;
 import com.helger.regrep.rim.VocabularyTermValueType;
+import com.helger.text.IMultilingualText;
+
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 /**
  * Helper class to simplify the creation of RegRep data constructs.
