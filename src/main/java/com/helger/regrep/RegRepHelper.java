@@ -18,6 +18,9 @@ package com.helger.regrep;
 
 import java.util.UUID;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import com.helger.annotation.Nonempty;
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.base.enforce.ValueEnforcer;
@@ -26,9 +29,6 @@ import com.helger.regrep.query.QueryResponse;
 import com.helger.regrep.query.ResponseOptionType;
 import com.helger.regrep.rim.QueryType;
 import com.helger.regrep.rim.SlotType;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 /**
  * Helper class to simplify the creation of RegRep data constructs.
@@ -41,7 +41,7 @@ public final class RegRepHelper
   private RegRepHelper ()
   {}
 
-  @Nonnull
+  @NonNull
   public static QueryRequest createEmptyQueryRequest ()
   {
     final QueryRequest ret = new QueryRequest ();
@@ -50,9 +50,9 @@ public final class RegRepHelper
     return ret;
   }
 
-  @Nonnull
-  public static QueryRequest createQueryRequest (@Nonnull @Nonempty final String sQueryDefinition,
-                                                 @Nonnull @Nonempty final SlotType... aSlots)
+  @NonNull
+  public static QueryRequest createQueryRequest (@NonNull @Nonempty final String sQueryDefinition,
+                                                 @NonNull @Nonempty final SlotType... aSlots)
   {
     ValueEnforcer.notEmpty (sQueryDefinition, "sQueryDefinition");
     ValueEnforcer.notEmptyNoNullValue (aSlots, "Slots");
@@ -66,8 +66,8 @@ public final class RegRepHelper
     return ret;
   }
 
-  @Nonnull
-  public static QueryResponse createEmptyQueryResponse (@Nonnull final ERegRepResponseStatus eStatus)
+  @NonNull
+  public static QueryResponse createEmptyQueryResponse (@NonNull final ERegRepResponseStatus eStatus)
   {
     ValueEnforcer.notNull (eStatus, "Status");
 
@@ -76,10 +76,10 @@ public final class RegRepHelper
     return ret;
   }
 
-  @Nonnull
-  public static QueryResponse createQueryResponse (@Nonnull final ERegRepResponseStatus eStatus,
+  @NonNull
+  public static QueryResponse createQueryResponse (@NonNull final ERegRepResponseStatus eStatus,
                                                    @Nullable final String sRequestID,
-                                                   @Nonnull @Nonempty final SlotType... aSlots)
+                                                   @NonNull @Nonempty final SlotType... aSlots)
   {
     final QueryResponse ret = createEmptyQueryResponse (eStatus);
     ret.setRequestId (sRequestID);

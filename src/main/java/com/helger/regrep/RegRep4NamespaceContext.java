@@ -18,13 +18,13 @@ package com.helger.regrep;
 
 import javax.xml.XMLConstants;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.misc.Singleton;
 import com.helger.xml.CXML;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 import com.helger.xsds.wsaddr.CWSAddr;
 import com.helger.xsds.xlink.CXLink;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * The namespace context to be used as the namespace prefix mapper.
@@ -51,7 +51,7 @@ public class RegRep4NamespaceContext extends MapBasedNamespaceContext
     addMapping (CRegRep4.DEFAULT_PREFIX_SPI, CRegRep4.NAMESPACE_URI_SPI);
   }
 
-  @Nonnull
+  @NonNull
   public static RegRep4NamespaceContext getInstance ()
   {
     return SingletonHolder.INSTANCE;

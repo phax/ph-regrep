@@ -16,6 +16,8 @@
  */
 package com.helger.regrep;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.PresentForCodeCoverage;
 import com.helger.annotation.style.ReturnsMutableCopy;
@@ -27,8 +29,6 @@ import com.helger.mime.IMimeType;
 import com.helger.xsds.wsaddr.CWSAddr;
 import com.helger.xsds.xlink.CXLink;
 import com.helger.xsds.xml.CXML_XSD;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Contains all the constants for RegRep XSD handling.
@@ -56,7 +56,7 @@ public final class CRegRep4
   // Since beta4
   public static final IMimeType MIME_TYPE_EBRS_XML = EMimeContentType.APPLICATION.buildMimeType ("x-ebrs+xml");
 
-  @Nonnull
+  @NonNull
   private static ClassLoader _getCL ()
   {
     return CRegRep4.class.getClassLoader ();
@@ -65,41 +65,41 @@ public final class CRegRep4
   private static final String PREFIX = "external/schemas/regrep4/";
 
   // Note: requires rim, rs
-  @Nonnull
+  @NonNull
   public static ClassPathResource getXSDResourceLCM ()
   {
     return new ClassPathResource (PREFIX + "lcm.xsd", _getCL ());
   }
 
   // Note: requires rim, rs
-  @Nonnull
+  @NonNull
   public static ClassPathResource getXSDResourceQuery ()
   {
     return new ClassPathResource (PREFIX + "query.xsd", _getCL ());
   }
 
   // Note: requires xlink, ws-addr
-  @Nonnull
+  @NonNull
   public static ClassPathResource getXSDResourceRIM ()
   {
     return new ClassPathResource (PREFIX + "rim.xsd", _getCL ());
   }
 
   // Note: requires rim
-  @Nonnull
+  @NonNull
   public static ClassPathResource getXSDResourceRS ()
   {
     return new ClassPathResource (PREFIX + "rs.xsd", _getCL ());
   }
 
   // Note: requires rim, rs
-  @Nonnull
+  @NonNull
   public static ClassPathResource getXSDResourceSPI ()
   {
     return new ClassPathResource (PREFIX + "spi.xsd", _getCL ());
   }
 
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
   public static ICommonsList <ClassPathResource> getAllXSDIncludes ()
   {
@@ -110,7 +110,7 @@ public final class CRegRep4
                                     getXSDResourceRS ());
   }
 
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
   public static ICommonsList <ClassPathResource> getAllXSDsLCM ()
   {
@@ -119,7 +119,7 @@ public final class CRegRep4
     return ret;
   }
 
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
   public static ICommonsList <ClassPathResource> getAllXSDsQuery ()
   {
@@ -128,7 +128,7 @@ public final class CRegRep4
     return ret;
   }
 
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
   public static ICommonsList <ClassPathResource> getAllXSDsSPI ()
   {

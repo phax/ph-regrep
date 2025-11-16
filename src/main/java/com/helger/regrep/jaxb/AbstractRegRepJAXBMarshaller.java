@@ -21,12 +21,13 @@ import java.util.function.Function;
 
 import javax.xml.namespace.QName;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import com.helger.io.resource.ClassPathResource;
 import com.helger.jaxb.GenericJAXBMarshaller;
 import com.helger.regrep.RegRep4NamespaceContext;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 import jakarta.xml.bind.JAXBElement;
 
 /**
@@ -53,9 +54,9 @@ public abstract class AbstractRegRepJAXBMarshaller <JAXBTYPE> extends GenericJAX
    *        respective's package ObjectFactory implementation. May not be
    *        <code>null</code>.
    */
-  protected AbstractRegRepJAXBMarshaller (@Nonnull final Class <JAXBTYPE> aType,
+  protected AbstractRegRepJAXBMarshaller (@NonNull final Class <JAXBTYPE> aType,
                                           @Nullable final List <? extends ClassPathResource> aXSDs,
-                                          @Nonnull final Function <? super JAXBTYPE, ? extends JAXBElement <JAXBTYPE>> aJAXBElementWrapper)
+                                          @NonNull final Function <? super JAXBTYPE, ? extends JAXBElement <JAXBTYPE>> aJAXBElementWrapper)
   {
     super (aType, aXSDs, aJAXBElementWrapper);
     setNamespaceContext (RegRep4NamespaceContext.getInstance ());
@@ -73,9 +74,9 @@ public abstract class AbstractRegRepJAXBMarshaller <JAXBTYPE> extends GenericJAX
    * @param aQName
    *        the qualified element name to be used. May not be <code>null</code>.
    */
-  protected AbstractRegRepJAXBMarshaller (@Nonnull final Class <JAXBTYPE> aType,
+  protected AbstractRegRepJAXBMarshaller (@NonNull final Class <JAXBTYPE> aType,
                                           @Nullable final List <? extends ClassPathResource> aXSDs,
-                                          @Nonnull final QName aQName)
+                                          @NonNull final QName aQName)
   {
     this (aType, aXSDs, createSimpleJAXBElement (aQName, aType));
   }

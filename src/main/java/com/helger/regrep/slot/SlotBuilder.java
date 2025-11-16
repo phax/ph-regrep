@@ -23,6 +23,8 @@ import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 import org.w3c.dom.Element;
 
 import com.helger.annotation.Nonempty;
@@ -36,9 +38,6 @@ import com.helger.regrep.rim.MapType;
 import com.helger.regrep.rim.SlotType;
 import com.helger.regrep.rim.ValueType;
 import com.helger.regrep.rim.VocabularyTermType;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 /**
  * A type -safe builder for RegRep slots.
@@ -54,146 +53,146 @@ public class SlotBuilder implements IBuilder <SlotType>
   public SlotBuilder ()
   {}
 
-  @Nonnull
-  public SlotBuilder setName (@Nonnull @Nonempty final String sName)
+  @NonNull
+  public SlotBuilder setName (@NonNull @Nonempty final String sName)
   {
     ValueEnforcer.notEmpty (sName, "Name");
     m_sName = sName;
     return this;
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final ValueType x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final ValueType x)
   {
     ValueEnforcer.notNull (x, "Value");
     m_aValue = x;
     return this;
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final Element aNode)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final Element aNode)
   {
     // Cannot be a DOM Document
     return setValue (SlotHelper.createSlotValue (aNode));
   }
 
-  @Nonnull
+  @NonNull
   public SlotBuilder setValue (final boolean b)
   {
     return setValue (SlotHelper.createSlotValue (b));
   }
 
-  @Nonnull
+  @NonNull
   public SlotBuilder setValue (@Nullable final ERegRepCollectionType eCollectionType,
                                @Nullable final ValueType... aArray)
   {
     return setValue (SlotHelper.createSlotValue (eCollectionType, aArray));
   }
 
-  @Nonnull
+  @NonNull
   public SlotBuilder setValue (@Nullable final ERegRepCollectionType eCollectionType,
                                @Nullable final Iterable <? extends ValueType> aCont)
   {
     return setValue (SlotHelper.createSlotValue (eCollectionType, aCont));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final OffsetDateTime x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final OffsetDateTime x)
   {
     ValueEnforcer.notNull (x, "Value");
     return setValue (SlotHelper.createSlotValue (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final LocalDateTime x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final LocalDateTime x)
   {
     ValueEnforcer.notNull (x, "Value");
     return setValue (PDTFactory.createOffsetDateTime (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final LocalDate x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final LocalDate x)
   {
     ValueEnforcer.notNull (x, "Value");
     return setValue (PDTFactory.createOffsetDateTime (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final ZonedDateTime x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final ZonedDateTime x)
   {
     ValueEnforcer.notNull (x, "Value");
     return setValue (PDTFactory.createOffsetDateTime (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final Date x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final Date x)
   {
     ValueEnforcer.notNull (x, "Value");
     return setValue (PDTFactory.createOffsetDateTime (x));
   }
 
-  @Nonnull
+  @NonNull
   public SlotBuilder setValue (final float x)
   {
     return setValue (SlotHelper.createSlotValue (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final BigInteger x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final BigInteger x)
   {
     return setValue (SlotHelper.createSlotValue (x));
   }
 
-  @Nonnull
+  @NonNull
   public SlotBuilder setValue (final int x)
   {
     return setValue (BigInteger.valueOf (x));
   }
 
-  @Nonnull
+  @NonNull
   public SlotBuilder setValue (final long x)
   {
     return setValue (BigInteger.valueOf (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final InternationalStringType x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final InternationalStringType x)
   {
     return setValue (SlotHelper.createSlotValue (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final MapType x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final MapType x)
   {
     return setValue (SlotHelper.createSlotValue (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final SlotType x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final SlotType x)
   {
     return setValue (SlotHelper.createSlotValue (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final String x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final String x)
   {
     return setValue (SlotHelper.createSlotValue (x));
   }
 
-  @Nonnull
-  public SlotBuilder setVocabularyTermValue (@Nonnull final String sVocabulary, @Nonnull final String sTerm)
+  @NonNull
+  public SlotBuilder setVocabularyTermValue (@NonNull final String sVocabulary, @NonNull final String sTerm)
   {
     return setValue (SlotHelper.createVocabularyTerm (sVocabulary, sTerm));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final VocabularyTerm x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final VocabularyTerm x)
   {
     return setValue (SlotHelper.createVocabularyTerm (x));
   }
 
-  @Nonnull
-  public SlotBuilder setValue (@Nonnull final VocabularyTermType x)
+  @NonNull
+  public SlotBuilder setValue (@NonNull final VocabularyTermType x)
   {
     return setValue (SlotHelper.createSlotValue (x));
   }
@@ -207,7 +206,7 @@ public class SlotBuilder implements IBuilder <SlotType>
     return m_sName != null && m_aValue != null;
   }
 
-  @Nonnull
+  @NonNull
   public SlotType build ()
   {
     if (m_sName == null)

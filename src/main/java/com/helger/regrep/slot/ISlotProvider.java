@@ -16,11 +16,11 @@
  */
 package com.helger.regrep.slot;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.style.ReturnsMutableCopy;
 import com.helger.base.name.IHasName;
 import com.helger.regrep.rim.SlotType;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Generic slot provider.
@@ -33,7 +33,7 @@ public interface ISlotProvider extends IHasName
    * @return A newly created slot. Never <code>null</code>. Each invocation must
    *         create a new instance.
    */
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
   SlotType createSlot ();
 }

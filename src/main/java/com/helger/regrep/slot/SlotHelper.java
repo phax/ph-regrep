@@ -21,6 +21,8 @@ import java.time.OffsetDateTime;
 import java.util.Locale;
 import java.util.Map;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 import org.w3c.dom.Element;
 
 import com.helger.annotation.Nonempty;
@@ -48,9 +50,6 @@ import com.helger.regrep.rim.VocabularyTermType;
 import com.helger.regrep.rim.VocabularyTermValueType;
 import com.helger.text.IMultilingualText;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
-
 /**
  * Helper class to simplify the creation of RegRep data constructs.
  *
@@ -62,17 +61,17 @@ public final class SlotHelper
   private SlotHelper ()
   {}
 
-  @Nonnull
-  public static LocalizedStringType createLocalizedString (@Nonnull final Locale aLocale, @Nonnull final String sText)
+  @NonNull
+  public static LocalizedStringType createLocalizedString (@NonNull final Locale aLocale, @NonNull final String sText)
   {
     ValueEnforcer.notNull (aLocale, "Locale");
     ValueEnforcer.notNull (sText, "Text");
     return createLocalizedString (aLocale.getLanguage (), sText);
   }
 
-  @Nonnull
-  public static LocalizedStringType createLocalizedString (@Nonnull @Nonempty final String sLanguage,
-                                                           @Nonnull final String sText)
+  @NonNull
+  public static LocalizedStringType createLocalizedString (@NonNull @Nonempty final String sLanguage,
+                                                           @NonNull final String sText)
   {
     ValueEnforcer.notEmpty (sLanguage, "Language");
     ValueEnforcer.notNull (sText, "Text");
@@ -82,7 +81,7 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
+  @NonNull
   public static InternationalStringType createInternationalStringType (@Nullable final Map <String, String> aMap)
   {
     ValueEnforcer.noNullValue (aMap, "Map");
@@ -94,7 +93,7 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
+  @NonNull
   public static InternationalStringType createInternationalStringType (@Nullable final IMultilingualText aMLT)
   {
     final InternationalStringType ret = new InternationalStringType ();
@@ -104,7 +103,7 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
+  @NonNull
   public static InternationalStringType createInternationalStringType (@Nullable final LocalizedStringType... aArray)
   {
     ValueEnforcer.noNullValue (aArray, "Array");
@@ -116,7 +115,7 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
+  @NonNull
   public static MapType createMap (@Nullable final Map <? extends ValueType, ? extends ValueType> aMap)
   {
     ValueEnforcer.notNull (aMap, "Value");
@@ -132,15 +131,15 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
-  public static VocabularyTermType createVocabularyTerm (@Nonnull final VocabularyTerm aTerm)
+  @NonNull
+  public static VocabularyTermType createVocabularyTerm (@NonNull final VocabularyTerm aTerm)
   {
     ValueEnforcer.notNull (aTerm, "Term");
     return createVocabularyTerm (aTerm.getVocabulary (), aTerm.getTerm ());
   }
 
-  @Nonnull
-  public static VocabularyTermType createVocabularyTerm (@Nonnull final String sVocabulary, @Nonnull final String sTerm)
+  @NonNull
+  public static VocabularyTermType createVocabularyTerm (@NonNull final String sVocabulary, @NonNull final String sTerm)
   {
     ValueEnforcer.notNull (sVocabulary, "Vocabulary");
     ValueEnforcer.notNull (sTerm, "Term");
@@ -150,8 +149,8 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
-  public static AnyValueType createSlotValue (@Nonnull final Element x)
+  @NonNull
+  public static AnyValueType createSlotValue (@NonNull final Element x)
   {
     ValueEnforcer.notNull (x, "Value");
     final AnyValueType ret = new AnyValueType ();
@@ -159,19 +158,19 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
+  @NonNull
   public static BooleanValueType createSlotValue (final boolean x)
   {
     return new BooleanValueType (Boolean.valueOf (x));
   }
 
-  @Nonnull
+  @NonNull
   public static CollectionValueType createSlotValue (@Nullable final ValueType... x)
   {
     return createSlotValue ((ERegRepCollectionType) null, x);
   }
 
-  @Nonnull
+  @NonNull
   public static CollectionValueType createSlotValue (@Nullable final ERegRepCollectionType eType,
                                                      @Nullable final ValueType... x)
   {
@@ -185,7 +184,7 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
+  @NonNull
   public static CollectionValueType createSlotValue (@Nullable final ERegRepCollectionType eType,
                                                      @Nullable final Iterable <? extends ValueType> x)
   {
@@ -199,42 +198,42 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
-  public static DateTimeValueType createSlotValue (@Nonnull final OffsetDateTime x)
+  @NonNull
+  public static DateTimeValueType createSlotValue (@NonNull final OffsetDateTime x)
   {
     ValueEnforcer.notNull (x, "Value");
     return new DateTimeValueType (XMLOffsetDateTime.of (x));
   }
 
-  @Nonnull
-  public static DateTimeValueType createSlotValue (@Nonnull final XMLOffsetDateTime x)
+  @NonNull
+  public static DateTimeValueType createSlotValue (@NonNull final XMLOffsetDateTime x)
   {
     ValueEnforcer.notNull (x, "Value");
     return new DateTimeValueType (x);
   }
 
-  @Nonnull
+  @NonNull
   public static FloatValueType createSlotValue (final float x)
   {
     return new FloatValueType (Float.valueOf (x));
   }
 
-  @Nonnull
-  public static IntegerValueType createSlotValue (@Nonnull final BigInteger x)
+  @NonNull
+  public static IntegerValueType createSlotValue (@NonNull final BigInteger x)
   {
     ValueEnforcer.notNull (x, "Value");
     return new IntegerValueType (x);
   }
 
-  @Nonnull
-  public static InternationalStringValueType createSlotValue (@Nonnull final InternationalStringType x)
+  @NonNull
+  public static InternationalStringValueType createSlotValue (@NonNull final InternationalStringType x)
   {
     ValueEnforcer.notNull (x, "Value");
     return new InternationalStringValueType (x);
   }
 
-  @Nonnull
-  public static MapValueType createSlotValue (@Nonnull final MapType x)
+  @NonNull
+  public static MapValueType createSlotValue (@NonNull final MapType x)
   {
     ValueEnforcer.notNull (x, "Value");
     final MapValueType ret = new MapValueType ();
@@ -242,8 +241,8 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
-  public static SlotValueType createSlotValue (@Nonnull final SlotType x)
+  @NonNull
+  public static SlotValueType createSlotValue (@NonNull final SlotType x)
   {
     ValueEnforcer.notNull (x, "Value");
     final SlotValueType ret = new SlotValueType ();
@@ -251,22 +250,22 @@ public final class SlotHelper
     return ret;
   }
 
-  @Nonnull
-  public static StringValueType createSlotValue (@Nonnull final String x)
+  @NonNull
+  public static StringValueType createSlotValue (@NonNull final String x)
   {
     ValueEnforcer.notNull (x, "Value");
     return new StringValueType (x);
   }
 
-  @Nonnull
-  public static VocabularyTermValueType createSlotValue (@Nonnull final VocabularyTermType x)
+  @NonNull
+  public static VocabularyTermValueType createSlotValue (@NonNull final VocabularyTermType x)
   {
     ValueEnforcer.notNull (x, "Value");
     return new VocabularyTermValueType (x);
   }
 
-  @Nonnull
-  public static SlotType createSlot (@Nonnull @Nonempty final String sName, @Nonnull final ValueType aValue)
+  @NonNull
+  public static SlotType createSlot (@NonNull @Nonempty final String sName, @NonNull final ValueType aValue)
   {
     ValueEnforcer.notEmpty (sName, "Name");
     ValueEnforcer.notNull (aValue, "Value");

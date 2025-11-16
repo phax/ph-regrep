@@ -22,6 +22,7 @@ import java.math.BigInteger;
 import java.util.Date;
 import java.util.Locale;
 
+import org.jspecify.annotations.NonNull;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,8 +38,6 @@ import com.helger.regrep.query.QueryRequest;
 import com.helger.regrep.rim.ValueType;
 import com.helger.xml.serialize.read.DOMReader;
 
-import jakarta.annotation.Nonnull;
-
 /**
  * Test class for class {@link SlotBuilder}
  *
@@ -49,7 +48,7 @@ public final class SlotBuilderTest
   private static final Logger LOGGER = LoggerFactory.getLogger (SlotBuilderTest.class);
   private static final MutableInt COUNTER = new MutableInt (0);
 
-  @Nonnull
+  @NonNull
   private static SlotBuilder _sb ()
   {
     return new SlotBuilder ().setName ("slot" + COUNTER.inc ());

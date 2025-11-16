@@ -16,12 +16,12 @@
  */
 package com.helger.regrep.slot;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import com.helger.annotation.Nonempty;
 import com.helger.base.id.IHasID;
 import com.helger.base.lang.EnumHelper;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 /**
  * Enumeration with collection types.
@@ -37,12 +37,12 @@ public enum ERegRepCollectionType implements IHasID <String>
 
   private final String m_sID;
 
-  ERegRepCollectionType (@Nonnull @Nonempty final String sValue)
+  ERegRepCollectionType (@NonNull @Nonempty final String sValue)
   {
     m_sID = sValue;
   }
 
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getID ()
   {

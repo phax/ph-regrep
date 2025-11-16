@@ -18,15 +18,15 @@ package com.helger.regrep.helper;
 
 import java.io.Serializable;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import com.helger.annotation.Nonempty;
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.MustImplementEqualsAndHashcode;
 import com.helger.base.enforce.ValueEnforcer;
 import com.helger.base.hashcode.HashCodeGenerator;
 import com.helger.base.tostring.ToStringGenerator;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 /**
  * This is a helper class to have an easy way to provide a vocabulary term.
@@ -40,7 +40,7 @@ public final class VocabularyTerm implements Serializable
   private final String m_sVocabulary;
   private final String m_sTerm;
 
-  public VocabularyTerm (@Nonnull @Nonempty final String sVocabulary, @Nonnull @Nonempty final String sTerm)
+  public VocabularyTerm (@NonNull @Nonempty final String sVocabulary, @NonNull @Nonempty final String sTerm)
   {
     ValueEnforcer.notEmpty (sVocabulary, "Vocabulary");
     ValueEnforcer.notEmpty (sTerm, "Term");
@@ -52,7 +52,7 @@ public final class VocabularyTerm implements Serializable
    * @return The vocabulary as provided in the constructor. Neither
    *         <code>null</code> nor empty.
    */
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getVocabulary ()
   {
@@ -75,7 +75,7 @@ public final class VocabularyTerm implements Serializable
    * @return The term as provided in the constructor. Neither <code>null</code>
    *         nor empty.
    */
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getTerm ()
   {

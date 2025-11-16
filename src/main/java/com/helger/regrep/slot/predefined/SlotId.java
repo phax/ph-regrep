@@ -16,13 +16,13 @@
  */
 package com.helger.regrep.slot.predefined;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.Nonempty;
 import com.helger.base.enforce.ValueEnforcer;
 import com.helger.regrep.rim.SlotType;
 import com.helger.regrep.slot.ISlotProvider;
 import com.helger.regrep.slot.SlotBuilder;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Predefined RegRep slot "id"
@@ -35,20 +35,20 @@ public class SlotId implements ISlotProvider
 
   private final String m_sValue;
 
-  public SlotId (@Nonnull final String sValue)
+  public SlotId (@NonNull final String sValue)
   {
     ValueEnforcer.notNull (sValue, "Value");
     m_sValue = sValue;
   }
 
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getName ()
   {
     return NAME;
   }
 
-  @Nonnull
+  @NonNull
   public SlotType createSlot ()
   {
     return new SlotBuilder ().setName (NAME).setValue (m_sValue).build ();

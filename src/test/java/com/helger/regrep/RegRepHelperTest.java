@@ -20,6 +20,7 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.Locale;
 
+import org.jspecify.annotations.NonNull;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,8 +35,6 @@ import com.helger.regrep.slot.SlotBuilder;
 import com.helger.regrep.slot.SlotHelper;
 import com.helger.xml.serialize.read.DOMReader;
 
-import jakarta.annotation.Nonnull;
-
 /**
  * Test class for class {@link RegRepHelper}
  *
@@ -45,7 +44,7 @@ public final class RegRepHelperTest
 {
   private static final Logger LOGGER = LoggerFactory.getLogger (RegRepHelperTest.class);
 
-  private static void _validate (@Nonnull final QueryRequest aQR)
+  private static void _validate (@NonNull final QueryRequest aQR)
   {
     assertNotNull (aQR);
 
@@ -77,7 +76,7 @@ public final class RegRepHelperTest
     _validate (aQR);
   }
 
-  private static void _validate (@Nonnull final QueryResponse aQR)
+  private static void _validate (@NonNull final QueryResponse aQR)
   {
     assertNotNull (aQR);
 

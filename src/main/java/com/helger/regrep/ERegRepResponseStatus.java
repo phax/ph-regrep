@@ -16,12 +16,12 @@
  */
 package com.helger.regrep;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
 import com.helger.annotation.Nonempty;
 import com.helger.base.id.IHasID;
 import com.helger.base.lang.EnumHelper;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 
 /**
  * Query response status enum
@@ -36,12 +36,12 @@ public enum ERegRepResponseStatus implements IHasID <String>
 
   private final String m_sID;
 
-  ERegRepResponseStatus (@Nonnull @Nonempty final String sID)
+  ERegRepResponseStatus (@NonNull @Nonempty final String sID)
   {
     m_sID = sID;
   }
 
-  @Nonnull
+  @NonNull
   @Nonempty
   public String getID ()
   {
