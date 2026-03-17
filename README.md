@@ -1,8 +1,9 @@
 # ph-regrep
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.helger/ph-regrep/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.helger/ph-regrep) 
+<!-- ph-badge-start -->
+[![Sonatype Central](https://maven-badges.sml.io/sonatype-central/com.helger/ph-regrep/badge.svg)](https://maven-badges.sml.io/sonatype-central/com.helger/ph-regrep/)
 [![javadoc](https://javadoc.io/badge2/com.helger/ph-regrep/javadoc.svg)](https://javadoc.io/doc/com.helger/ph-regrep)
-[![CodeCov](https://codecov.io/gh/phax/ph-regrep/branch/master/graph/badge.svg)](https://codecov.io/gh/phax/ph-regrep)
+<!-- ph-badge-end -->
 
 OASIS RegRep (ebXML Registry) Java wrapper library.
 It supports simple reading and writing of RegRep 4.0 documents.
