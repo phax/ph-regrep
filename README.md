@@ -3,6 +3,8 @@
 <!-- ph-badge-start -->
 [![Sonatype Central](https://maven-badges.sml.io/sonatype-central/com.helger/ph-regrep/badge.svg)](https://maven-badges.sml.io/sonatype-central/com.helger/ph-regrep/)
 [![javadoc](https://javadoc.io/badge2/com.helger/ph-regrep/javadoc.svg)](https://javadoc.io/doc/com.helger/ph-regrep)
+
+> If this project saved you some time or made your day a little easier, a star would mean a lot — it helps others find it too.
 <!-- ph-badge-end -->
 
 OASIS RegRep (ebXML Registry) Java wrapper library.
