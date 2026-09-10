@@ -68,8 +68,7 @@ public final class SlotBuilderTest
                                            _sb ().setValue (true).build (),
                                            _sb ().setValue (ERegRepCollectionType.LIST,
                                                             SlotHelper.createSlotValue ("ListItem1"),
-                                                            SlotHelper.createSlotValue ("ListItem2"))
-                                                 .build (),
+                                                            SlotHelper.createSlotValue ("ListItem2")).build (),
                                            _sb ().setValue (PDTFactory.getCurrentLocalDateTime ()).build (),
                                            _sb ().setValue (PDTFactory.getCurrentLocalDate ()).build (),
                                            _sb ().setValue (PDTFactory.getCurrentZonedDateTimeUTC ()).build (),

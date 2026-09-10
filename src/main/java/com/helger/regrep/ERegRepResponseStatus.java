@@ -55,7 +55,8 @@ public enum ERegRepResponseStatus implements IHasID <String>
   }
 
   @Nullable
-  public static ERegRepResponseStatus getFromIDOrDefault (@Nullable final String sID, @Nullable final ERegRepResponseStatus eDefault)
+  public static ERegRepResponseStatus getFromIDOrDefault (@Nullable final String sID,
+                                                          @Nullable final ERegRepResponseStatus eDefault)
   {
     return EnumHelper.getFromIDOrDefault (ERegRepResponseStatus.class, sID, eDefault);
   }

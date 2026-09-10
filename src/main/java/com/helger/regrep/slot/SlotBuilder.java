@@ -198,8 +198,7 @@ public class SlotBuilder implements IBuilder <SlotType>
   }
 
   /**
-   * @return <code>true</code> if all mandatory fields are set and build will
-   *         succeed.
+   * @return <code>true</code> if all mandatory fields are set and build will succeed.
    */
   public boolean areAllMandatoryFieldsSet ()
   {

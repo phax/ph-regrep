@@ -49,8 +49,7 @@ public final class VocabularyTerm implements Serializable
   }
 
   /**
-   * @return The vocabulary as provided in the constructor. Neither
-   *         <code>null</code> nor empty.
+   * @return The vocabulary as provided in the constructor. Neither <code>null</code> nor empty.
    */
   @NonNull
   @Nonempty
@@ -72,8 +71,7 @@ public final class VocabularyTerm implements Serializable
   }
 
   /**
-   * @return The term as provided in the constructor. Neither <code>null</code>
-   *         nor empty.
+   * @return The term as provided in the constructor. Neither <code>null</code> nor empty.
    */
   @NonNull
   @Nonempty

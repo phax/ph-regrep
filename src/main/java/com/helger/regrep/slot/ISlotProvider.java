@@ -30,8 +30,8 @@ import com.helger.regrep.rim.SlotType;
 public interface ISlotProvider extends IHasName
 {
   /**
-   * @return A newly created slot. Never <code>null</code>. Each invocation must
-   *         create a new instance.
+   * @return A newly created slot. Never <code>null</code>. Each invocation must create a new
+   *         instance.
    */
   @NonNull
   @ReturnsMutableCopy

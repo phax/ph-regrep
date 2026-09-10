@@ -43,16 +43,14 @@ public abstract class AbstractRegRepJAXBMarshaller <JAXBTYPE> extends GenericJAX
    * Constructor with XSD paths.
    *
    * @param aType
-   *        The class of the JAXB document implementation type. May not be
-   *        <code>null</code>.
+   *        The class of the JAXB document implementation type. May not be <code>null</code>.
    * @param aXSDs
-   *        The XSDs used to validate document. May be <code>null</code> or
-   *        empty indicating, that no XSD check is needed.
+   *        The XSDs used to validate document. May be <code>null</code> or empty indicating, that
+   *        no XSD check is needed.
    * @param aJAXBElementWrapper
-   *        Wrap the passed domain object into a {@link JAXBElement} for
-   *        marshalling (writing). This can usually be done using the
-   *        respective's package ObjectFactory implementation. May not be
-   *        <code>null</code>.
+   *        Wrap the passed domain object into a {@link JAXBElement} for marshalling (writing). This
+   *        can usually be done using the respective's package ObjectFactory implementation. May not
+   *        be <code>null</code>.
    */
   protected AbstractRegRepJAXBMarshaller (@NonNull final Class <JAXBTYPE> aType,
                                           @Nullable final List <? extends ClassPathResource> aXSDs,
@@ -66,11 +64,10 @@ public abstract class AbstractRegRepJAXBMarshaller <JAXBTYPE> extends GenericJAX
    * Constructor with qualified element.
    *
    * @param aType
-   *        The class of the JAXB document implementation type. May not be
-   *        <code>null</code>.
+   *        The class of the JAXB document implementation type. May not be <code>null</code>.
    * @param aXSDs
-   *        The XSDs used to validate document. May be <code>null</code> or
-   *        empty indicating, that no XSD check is needed.
+   *        The XSDs used to validate document. May be <code>null</code> or empty indicating, that
+   *        no XSD check is needed.
    * @param aQName
    *        the qualified element name to be used. May not be <code>null</code>.
    */
